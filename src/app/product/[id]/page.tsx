@@ -8,15 +8,12 @@ export const metadata: Metadata = {
 };
 
 interface Props {
-  searchParams: {
-    id: string;
-  };
+  searchParams: Promise<{ id: string }>;
 }
 
 const ProductPage = async ({ searchParams }: Props) => {
-  const { id } = searchParams;
+  const { id } = await searchParams;
   const endpoint = `https://dummyjson.com/products/${id}`;
-
   const product = await fetchData(endpoint);
 
   return (
@@ -27,3 +24,4 @@ const ProductPage = async ({ searchParams }: Props) => {
 };
 
 export default ProductPage;
+
