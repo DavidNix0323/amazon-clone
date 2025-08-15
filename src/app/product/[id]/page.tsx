@@ -7,11 +7,7 @@ export const metadata: Metadata = {
   title: "Product View Page | Amazon Clone app",
 };
 
-interface Props {
-  searchParams?: Record<string, string | string[] | undefined>;
-}
-
-const ProductPage = async ({ searchParams }: Props) => {
+const ProductPage = async ({ searchParams }: { searchParams?: Record<string, any> }) => {
   const id = typeof searchParams?.id === "string" ? searchParams.id : "";
 
   const endpoint = `https://dummyjson.com/products/${id}`;
