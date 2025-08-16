@@ -10,7 +10,11 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Amazon online shopping",
   description: "Amazon clone for education purpose",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
+
 
 export default function RootLayout({
   children,

@@ -1,6 +1,6 @@
 import { signOut } from "@/auth";
 import { MdMenu } from "react-icons/md";
-import { getSession } from "../hooks";
+import { getSession } from "../hooks/getSession";
 
 const HeaderBottom = async () => {
   const session = await getSession();

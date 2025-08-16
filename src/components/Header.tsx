@@ -6,7 +6,7 @@ import HeaderBottom from "./HeaderBottom";
 import SignInButton from "./SignInButton";
 import SearchInput from "./SearchInput";
 import SignOutButton from "./SignOutButton";
-import { getSession } from "../hooks";
+import { getSession } from "../hooks/getSession";
 import CartButton from "./CartButton";
 import FavoriteButton from "./FavoriteButton";
 
@@ -28,6 +28,7 @@ const Header = async () => {
               />
             </div>
           </Link>
+
           {/* Deliver */}
           <div className="headerItem hidden xl:inline-flex gap-1">
             <SlLocationPin className="text-lg text-white" />
@@ -36,12 +37,14 @@ const Header = async () => {
               <p className="text-white font-bold uppercase">USA</p>
             </div>
           </div>
+
           <SearchInput />
 
           {session?.user ? <SignOutButton /> : <SignInButton />}
 
           {/* Favorite */}
           <FavoriteButton />
+
           {/* Cart */}
           <CartButton />
         </div>
